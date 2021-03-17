@@ -1,0 +1,90 @@
+---
+title: "PSYC 259 Final"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+  
+---
+
+**Michelle Bruni**  
+**3/17/2021**
+
+For my final project, I have divided my work into three sections based on my Workflow Critique: _Efficiency_, _Fidelity_, and _Sharing/reproducibility_. Since the data merging for this project is already completed and was not done in R, I did not have any original code to work with or modify. That being said, I plan to use the techniques and code learned in this class going forward with my future research projects.
+
+### Efficiency
+
+_*Merging data*_
+
+In my original workflow critique, I explained that merging 80 participants' files into one master file was very time consuming and error-prone. Although this step has already been completed and will not need to be done again in the future, I've taken a sample of participant files and created code to merge the files. This gives me practice (and code) to use again in the future to merge files more easily. I anticipate that I can use this format of coding for my dissertation I collect in the near future. Importantly, I only need to bind or merge datasets vertically, not horizontally.
+
+```{r eval=FALSE, code_folding: show}
+rbind(participant1, participant2)
+```
+
+_*Automating code*_ 
+
+The second aspect I would like to improve is comparing the coding between two research assistants. Jake has suggested I use a logical operator (!=). I've thought about implenting this, however at this point I haven't yet figured out how to code this. 
+
+_*Filtering data*_
+
+The third aspect I wanted to improve was efficiency in filtering out specific variables in my dataset. I thought there would be a more efficient way of doing this in R, but after receiving feedback from classmates, I plan on continuing filtering my data in Excel. At the moment, I don't see the need to do this in R, as I use simple dummy coding and Excel makes it easy to filter out variables. 
+
+### Fidelity
+
+_*Version control*_
+
+Aside from the few aspects that can be automated in this project, the fidelity of my data and overall organization needed major improvement. I have spent the last few weeks working to organize my data. I will elaborate more on this in the next section. In my original workflow critique, I mentioned that version control was not efficient. I notoriously added -2 and -3 to the end of file names to denote the newest version. I also heavily relied on the latest modification date to tell me which was the most recent file. I realize this is not a good habit and that there are better ways of going about this.
+
+I personally do not feel comfortable using Github as a way to manage version control just yet. Instead, I decided to create a working document to keep track of  different versions of documents and data. I'm calling this document __*Version Control Updates*__. This will certainly require additional time and work in terms of updating it constantly, but I think it will help me remember what the contents are of each document. 
+
+When I was reviewing the data in my folders, I couldn't remember the difference between versions -2 and -3 because it had been so long since I had worked on it. I think keeping a document like this will be helpful for me personally, especially for projects that take longer. I haven't finished updating the notes for every single document in my folders, but I plan to do this going forward.
+
+![*Version Control Updates*](images/version-control.png)
+
+Because I am using this working document to keep track of changes and new documents created, I've decided to continue using the *data-v01* format. I worry that I might want to go back to older versions of documents, so I would rather keep the original versions and make a note of it in the update document.
+
+### Sharing/reproducibility
+
+_*Data and file organization*_
+
+The largest fault of my recent research project has been organization. Because I am the only person working on this project, I have been quite lazy with saving all of my data and reports within one folder and sorting it by date or type whenever I need a specific file. This isn't a habit I would like to continue with going forward when it's time to collect data for my dissertation, so I've created subsets of folders to better organize everything. This is what *one* folder looked like at the beginning of the Winter quarter:
+
+![*The before of my folder*](images/before.png)
+
+As you can see, there is no rhyme or reason to absolutely anything in this folder. There is no consistency with the naming of files nor grouping of different types of files. The first thing I did was create individual folders that will house different types of files. So far, I have chosen these groupings:
+
+* Data
+* Data Analyses
+* Data Presentations
+* Graphs
+
+![*The first step to organizing everything: create folders*](images/after-1.png)
+
+The **Data** folder houses 3 folders: *CSV*, *Data for Analyses*, and *Raw Data*. When I clean, edit or organize my data, I like to work in an Excel sheet first and then save a .CSV file that will be used in an R script. In the past, I've kept the Excel sheets and the.CSV files altogether. Now, I've divided these files into the *CSV* and *Data for Analyses* folders. Here you can see how the data is divided:
+
+![*Two folders that separate .CSV and Excel files*](images/csv-excel.png)
+
+
+This may be an unnecessary step for some, but I do appreciate how it keep different file types separate and gives a "cleaner" feel to my folder organization. Out of all the changes I've made to this project, I think this will have the greatest impact on my organization. 
+
+Next, in my **Data Analyses** folder, I have once again separated different file types. In the past, I have grouped SPSS files together with R files. Now, I have two separate folders for the respecitive file types:
+
+![*Two folders that separate R and SPSS files*](images/r-spss-2.png)
+
+One reason I like using SPSS, specifically for easy ANOVAs, is that the output is easy to read and share with my colleagues. I can't say the same for R output. Jake had suggested that I use different packages when running ANOVAs, so I will try that the next time I work on this project. I do appreciate that R is easy to automate and run analyses with a few lines of code, whereas with SPSS, the data input needs to be done step by step each time. My goal is to ultimately do *all* of my analyses using R.
+
+_*Naming conventions*_
+
+As I mentioned in the previous section, I have decided to stick with v01, v02, etc. for naming newer versions of files. However, another area that was certainly not perfect was my naming convention for files. I like to create different Excel sheets for different analyses to run. For example, ANOVA data get its own Excel file and correlational data get a separate Excel file. I always indicated when the Excel sheet was specifically for and ANOVA, such as *anova-partner-1.xlsx*. However, this was not true for Excel sheets made for correlational data. They might be named something like *like-phase-two.xlsx*. It wasn't clear what was exactly *in* this Excel file. 
+
+To improve this, I've decided to use a naming convention that clearly specifies the purpose of each Excel file. For example, all ANOVA files being with *ANOVA*, and all correlation files being with *corr*. The new naming convention can be seen below:
+
+![*New naming convention for Excel sheets*](images/new-names.png)
+
+This small change is a big improvement to what my naming convention looked like before. Before, there were no patterns. Now, I'm being intentional to specify the type of analyses to be run with that file. I also think this change will greatly affect my organization. Going forward, I plan to specify the differences between these versions (v01, v02, v03) on the Version Control Update file.
+
+
+### Conclusion
+
+Overall, I am very pleased with how I organized my data and files. I feel much more confident about accessing my files and knowing *what* each file is and *where* it belongs. I think I've created better habits during the course of this quarter, and I hope to continue them going forward with my dissertation. I'm most looking forward to seeing how the Version Control Update file works. Will it be time-consuming and annoying? Maybe. Or I might enjoy updating it, knowing that I'm staying on top of things.
